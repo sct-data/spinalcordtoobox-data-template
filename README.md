@@ -22,9 +22,10 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
     
     ```
     git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
-    vi setup.py # to edit name= and url=
-    vi README.md # 1. *remove* this Using the Template section
+    vi README.md # 1. remove this 'Using the Template' section
                  # 2. change remaining ${dataset_name}s to the name you picked
+    vi setup.py  # 1. set name=spinalcordtoolbox-data-${dataset_name}
+                 # 2. set url=https://github.com/spinalcordtoolbox/data-${dataset_name}
     git add -u
     git commit -m "Initial commit"
     ```
