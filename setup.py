@@ -19,8 +19,8 @@ setup(
       'Source': 'https://github.com/spinalcordtoolbox/data-${dataset_name}',
       'Documentation': 'https://spinalcordtoolbox.com/',
   },
-  #license='CC-BY-NC', ??
-  #license_files=[ ... ] # TODO?
+  license='CC-BY-4.0', ??
+  license_files=[ 'LICENSE.txt' ] # TODO?
 
   packages=find_namespace_packages('src/'),
   package_dir={"":"src/"},
