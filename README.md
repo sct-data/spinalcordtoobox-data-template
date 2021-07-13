@@ -5,7 +5,9 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 
 ## Using the Template
 
-1. Go to https://github.com/new and make a repo using this one as its template; name it `spinalcordtoolbox/data-${dataset_name}` where `${dataset_name}` is something usefully descriptive:
+1. Make a [new repo](https://github.com/new) using this as its template.
+
+    Name it `spinalcordtoolbox/data-${dataset_name}` where `${dataset_name}` is something usefully descriptive:
 
     ![data-template-new](./.data-template-new.png)
 
