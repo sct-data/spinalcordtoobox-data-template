@@ -17,7 +17,7 @@ setup(
   url='https://spinalcordtoolbox.com/',
   project_urls={
       'Source': 'https://github.com/spinalcordtoolbox/data-${dataset_name}',
-      #'Documentation': '',
+      'Documentation': 'https://spinalcordtoolbox.com/',
   },
   #license='CC-BY-NC', ??
   #license_files=[ ... ] # TODO?
