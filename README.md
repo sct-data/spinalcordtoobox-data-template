@@ -5,8 +5,11 @@ Part of [`spinalcordtoolbox`](https://github.com/neuropoly/spinalcordtoolbox).
 
 ## Using the Template
 
-1. Go to https://github.com/new and make a repo using this one as its template; name it `spinalcordtoolbox/data-${dataset_name}` where `${dataset_name}` is something descriptive
-2. Download the new repo
+1. Go to https://github.com/new and make a repo using this one as its template; name it `spinalcordtoolbox/data-${dataset_name}` where `${dataset_name}` is something usefully descriptive:
+
+    ![data-template-new](./.data-template-new.png)
+
+3. Download the new repo
     
     ```
     git clone git@github.com:spinalcordtoolbox/data-${dataset_name}
@@ -47,7 +50,7 @@ Part of [`spinalcordtoolbox`](https://github.com/neuropoly/spinalcordtoolbox).
     6. The release should appear on https://github.com/spinalcordtoolbox/data-${dataset_name}/releases
        with the .tar.gz (sdist) and .whl (wheel) formats attached momentarily.
 
-### Troubleshooting
+## Troubleshooting
 
 You can test the repo locally with
 
