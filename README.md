@@ -1,31 +1,50 @@
-# <dataset> template
+# `${dataset_name}`
 
 Part of [`spinalcordtoolbox`](https://github.com/neuropoly/spinalcordtoolbox).
 
 
-## Usage
+## Using the Template
 
-1. Clone this repo.
-
+1. Go to https://github.com/new and make a repo using this one as its template; name it `spinalcordtoolbox/data-${dataset_name}` where `${dataset_name}` is something descriptive
+2. Download the new repo
+    
     ```
-    git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name} 
-    cp ${data_files} src/spinalcordtoolbox/data/${dataset_name} 
+    git clone git@github.com:spinalcordtoolbox/data-${dataset_name}
+    cd data-${dataset_name}
+    ```
+    
+1. Fill with initial metadata
+    
+    ```
+    git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
     vi setup.py # to edit name= and url=
-    vi README.md # to edit the title and *remove* this usage section
+    vi README.md # 1. *remove* this Using the Template section
+                 # 2. change remaining ${dataset_name}s to the name you picked
+    git add -u
+    git commit -m "Initial commit"
+    ```
+    
+1. Fill with initial data and upload
+    
+    ```
+    cp ${data_files} src/spinalcordtoolbox/data/${dataset_name} 
     git add .
     git commit
-    git remote add origin git@github.com:neuropoly/spinalcordtoolbox-data-${dataset_name}
     git push
     ```
 
-2. Go to https://github.com/neuropoly/spinalcordtoolbox-data-${dataset_name}/releases
+
+## How to update this dataset
+
+1. Edit and commit the files in `src/spinalcordtoolbox/data/`
+2. Go to https://github.com/spinalcordtoolbox/data-${dataset_name}/releases
 
     1. Click "Draft Release"
     2. Fill in a version tag. We use [this versioning policy](TODO)
     3. Click "Publish Release"
     4. Wait a few minutes;
-    5. Monitor the progress at https://github.com/neuropoly/spinalcordtoolbox-data-${dataset_name}/actions/workflows/release.yml
-    6. The release should appear on https://github.com/neuropoly/spinalcordtoolbox-data-${dataset_name}/releases
+    5. Monitor the progress at https://github.com/spinalcordtoolbox/data-${dataset_name}/actions/workflows/release.yml
+    6. The release should appear on https://github.com/spinalcordtoolbox/data-${dataset_name}/releases
        with the .tar.gz (sdist) and .whl (wheel) formats attached momentarily.
 
 ### Troubleshooting
