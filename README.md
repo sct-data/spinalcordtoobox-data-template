@@ -1,6 +1,6 @@
 # `${dataset_name}`
 
-Part of [`spinalcordtoolbox`](https://github.com/neuropoly/spinalcordtoolbox).
+Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 
 
 ## Using the Template
