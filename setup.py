@@ -1,14 +1,14 @@
-from setuptools import setup, find_packages, find_namespace_packages
+from setuptools import setup, find_namespace_packages
 import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
 
 # workaround a bug introduced by pyproject.toml
 # https://github.com/pypa/pip/issues/7953#issuecomment-645133255
-import site, sys; site.ENABLE_USER_SITE = True
+import site; site.ENABLE_USER_SITE = True
 
 setup(
-  name='spinalcordtoolbox-data-<dataset>',
+  name='spinalcordtoolbox-data-${dataset_name}',
   description='Part of https://github.com/neuropoly/spinalcordtoolbox',
   long_description=(here / 'README.md').read_text(encoding='utf-8'),
   long_description_content_type='text/markdown',
@@ -16,7 +16,7 @@ setup(
   author_email='neuropoly@googlegroups.com',
   url='https://spinalcordtoolbox.com/',
   project_urls={
-      'Source': 'https://github.com/sct-data/<dataset>',
+      'Source': 'https://github.com/spinalcordtoolbox/data-${dataset_name}',
       #'Documentation': '',
   },
   #license='CC-BY-NC', ??
