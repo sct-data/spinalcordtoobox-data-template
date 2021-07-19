@@ -20,7 +20,7 @@ setup(
       'Documentation': 'https://spinalcordtoolbox.com/',
   },
   license='CC-BY-4.0',
-  license_files=[ 'LICENSE.txt' ] # TODO?
+  license_files=[ 'LICENSE.txt' ], # TODO?
 
   packages=find_namespace_packages('src/'),
   package_dir={"":"src/"},
