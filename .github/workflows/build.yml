@@ -21,4 +21,5 @@ jobs:
           pip install build
     - name: Build
       run: |
+          perl -pi -e 's/\${dataset_name}/sample-dataset/' setup.py
           python -m build --wheel --sdist
