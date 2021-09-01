@@ -13,7 +13,7 @@ setup(
   long_description=(here / 'README.md').read_text(encoding='utf-8'),
   long_description_content_type='text/markdown',
   author='Neuropoly',
-  author_email='neuropoly@googlegroups.com',
+  author_email='pip@neuropoly.org',
   url='https://spinalcordtoolbox.com/',
   project_urls={
       'Source': 'https://github.com/spinalcordtoolbox/data-${dataset_name}',
