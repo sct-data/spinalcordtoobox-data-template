@@ -21,12 +21,12 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 3. Fill with initial metadata
     
     ```bash
-    # 1. Rename the repo's `dataset` folder to match the repo name
-    git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
-   
-    # 2. Find and replace ${dataset_name} with the name you picked (e.g. `supercats`)
+    # 1. Find and replace ${dataset_name} with the name you picked (e.g. `supercats`)
     perl -pi -e 's/\${dataset_name}/supercats/' README.md
     perl -pi -e 's/\${dataset_name}/supercats/' setup.py
+   
+    # 2. Rename the repo's `dataset` folder to match the repo name
+    git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
    
     # 3. Commit the changes 
     git add -u
