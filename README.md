@@ -1,4 +1,4 @@
-# `${dataset_name}`
+# `data-${dataset_name}`
 
 Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 
@@ -35,7 +35,7 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
    
     # 4. Commit the changes 
     git add -u
-    git commit -m "Setting ${dataset_name} package metadata"
+    git commit -m "Setting data-${dataset_name} package metadata"
     git push
     ```
     
