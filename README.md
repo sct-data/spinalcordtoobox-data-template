@@ -24,16 +24,11 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
     # 1. Rename the repo's `dataset` folder to match the repo name
     git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
    
-    # 2. Edit the `README.md` file to:
-    #    - Find and replace ${dataset_name} with the name you picked
-    vi README.md
+    # 2. Find and replace ${dataset_name} with the name you picked (e.g. `supercats`)
+    perl -pi -e 's/\${dataset_name}/supercats/' README.md
+    perl -pi -e 's/\${dataset_name}/supercats/' setup.py
    
-    # 3. Edit the `setup.py` file to:
-    #    - set `name=` to `name=spinalcordtoolbox-data-${dataset_name}`
-    #    - set `url=` to `url=https://github.com/spinalcordtoolbox/data-${dataset_name}`
-    vi setup.py
-   
-    # 4. Commit the changes 
+    # 3. Commit the changes 
     git add -u
     git commit -m "Setting data-${dataset_name} package metadata"
     git push
