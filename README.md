@@ -14,7 +14,7 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 2. Download the new repo
     
     ```bash
-    git clone git@github.com:spinalcordtoolbox/data-${dataset_name}
+    git clone git@github.com:spinalcordtoolbox/data-${dataset_name}.git
     cd data-${dataset_name}
     ```
     
