@@ -25,7 +25,6 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
     git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
    
     # 2. Edit the `README.md` file to:
-    #    - Delete the 'Using the Template' section
     #    - Find and replace ${dataset_name} with the name you picked
     vi README.md
    
@@ -48,6 +47,17 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
     # 2. Add, commit, and push the newly-added files
     git add .
     git commit
+    ```
+
+5. Remove the "Using this template" section from `README.md`, since it is now no longer needed.
+
+    ```bash
+    # Delete the 'Using the Template' section from `README.md
+    vi README.md
+   
+    # Add, commit, and push the changes
+    git add README.md
+    git commit -m "Removing template section from README.md"
     git push
     ```
 
