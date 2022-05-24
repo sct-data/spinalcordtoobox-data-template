@@ -70,7 +70,7 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 2. Go to https://github.com/spinalcordtoolbox/data-${dataset_name}/releases
 
     1. Click "Draft Release"
-    2. Fill in a version tag. We use [this versioning policy](TODO)
+    2. Fill in a version tag. We use date-based release names (e.g. `r20200101, `r20220518`, etc.)
     3. Click "Publish Release"
     4. Wait a few minutes;
     5. Monitor the progress at https://github.com/spinalcordtoolbox/data-${dataset_name}/actions/workflows/release.yml
