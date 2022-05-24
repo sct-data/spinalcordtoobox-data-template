@@ -11,14 +11,14 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 
     ![data-template-new](./.data-template-new.png)
 
-3. Download the new repo
+2. Download the new repo
     
     ```
     git clone git@github.com:spinalcordtoolbox/data-${dataset_name}
     cd data-${dataset_name}
     ```
     
-1. Fill with initial metadata
+3. Fill with initial metadata
     
     ```
     git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
@@ -30,7 +30,7 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
     git commit -m "Initial commit"
     ```
     
-1. Fill with initial data and upload
+4. Fill with initial data and upload
     
     ```
     cp ${data_files} src/spinalcordtoolbox/data/${dataset_name} 
