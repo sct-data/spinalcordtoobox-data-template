@@ -13,27 +13,39 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 
 2. Download the new repo
     
-    ```
+    ```bash
     git clone git@github.com:spinalcordtoolbox/data-${dataset_name}
     cd data-${dataset_name}
     ```
     
 3. Fill with initial metadata
     
-    ```
+    ```bash
+    # 1. Rename the repo's `dataset` folder to match the repo name
     git mv src/spinalcordtoolbox/data/dataset src/spinalcordtoolbox/data/${dataset-name}
-    vi README.md # 1. remove this 'Using the Template' section
-                 # 2. change remaining ${dataset_name}s to the name you picked
-    vi setup.py  # 1. set name=spinalcordtoolbox-data-${dataset_name}
-                 # 2. set url=https://github.com/spinalcordtoolbox/data-${dataset_name}
+   
+    # 2. Edit the `README.md` file to:
+    #    - Delete the 'Using the Template' section
+    #    - Find and replace ${dataset_name} with the name you picked
+    vi README.md
+   
+    # 3. Edit the `setup.py` file to:
+    #    - set `name=` to `name=spinalcordtoolbox-data-${dataset_name}`
+    #    - set `url=` to `url=https://github.com/spinalcordtoolbox/data-${dataset_name}`
+    vi setup.py
+   
+    # 4. Commit the changes 
     git add -u
     git commit -m "Initial commit"
     ```
     
 4. Fill with initial data and upload
     
-    ```
-    cp ${data_files} src/spinalcordtoolbox/data/${dataset_name} 
+    ```bash
+    # 1. Copy over the data files to the dataset folder in this repo
+    cp ${data_files} src/spinalcordtoolbox/data/${dataset_name}
+   
+    # 2. Add, commit, and push the newly-added files
     git add .
     git commit
     git push
