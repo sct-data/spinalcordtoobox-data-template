@@ -83,8 +83,8 @@ You can test the repo locally with
 
 ```
 pip install build &&
-python -m build --wheel --sdist &&
-pip install dist/*.whl
+  python -m build --wheel --sdist &&
+  pip install dist/*.whl
 ```
 
 This should give you enough clues hopefully to track down any problems.
