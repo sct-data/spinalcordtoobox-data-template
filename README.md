@@ -35,7 +35,8 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
    
     # 4. Commit the changes 
     git add -u
-    git commit -m "Initial commit"
+    git commit -m "Setting ${dataset_name} package metadata"
+    git push
     ```
     
 4. Fill with initial data and upload
@@ -46,7 +47,8 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
    
     # 2. Add, commit, and push the newly-added files
     git add .
-    git commit
+    git commit -m "Copy over data files to dataset folder"
+    git push
     ```
 
 5. Remove the "Using this template" section from `README.md`, since it is now no longer needed.
