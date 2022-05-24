@@ -72,14 +72,32 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
     6. The release should appear on https://github.com/spinalcordtoolbox/data-${dataset_name}/releases
        with the .tar.gz (sdist) and .whl (wheel) formats attached momentarily.
 
-## Troubleshooting
 
-You can test the repo locally with
+## How to test this repo locally
 
+If you've encountered an error during the GitHub Actions workflow, you can use the following steps to test the repo locally:
+
+```bash
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install the `build` package (which is necessary to build pip packages)
+pip install build
+
+# Build the pip package, which will generate:
+#   1. A build folder (containing a copy of the files to be packaged)
+#   2. A packaged wheel (stored in ./dist/${package-name}.whl)
+#   3. A packaged source distribution (stored in ./dist/${package-name}.tar.gz)
+#   4. Package metadata (stored in ./src/${package-name}.egg-info
+python -m build --wheel --sdist
+
+# Install the generated wheel. 
+# As a result, the contents of ./src/ will be installed to:
+#   ./venv/lib/python3.7/site-packages/spinalcordtoolbox/data/${dataset_name}
+# This means that the installed data package will coexist alongside the
+# installed `spinalcordtoolbox` pip package.
+pip install dist/*.whl
 ```
-pip install build &&
-  python -m build --wheel --sdist &&
-  pip install dist/*.whl
-```
 
-This should give you enough clues hopefully to track down any problems.
+This should give you enough clues to hopefully to track down any problems.
