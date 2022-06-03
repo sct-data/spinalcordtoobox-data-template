@@ -10,6 +10,10 @@ on:
       version:
         description: 'Version (e.g. 2.0.3)'
         required: true
+  # test publishing just for this PR
+  pull_request:
+    branches:
+      - ng/template
 
 jobs:
   publish:
@@ -30,7 +34,7 @@ jobs:
       with:
         files: 'dist/*'
         fail_on_unmatched_files: true
-        tag_name: ${{ github.event.inputs.version }} # in the workflow_dispatch case, make a new tag from the given input; in the published release case, this will be empty and will fall back to updating that release.
+        tag_name: 2.0.3  #  ${{ github.event.inputs.version }} # in the workflow_dispatch case, make a new tag from the given input; in the published release case, this will be empty and will fall back to updating that release.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to PyPI
