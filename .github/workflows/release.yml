@@ -12,8 +12,6 @@ on:
         required: true
   # test publishing just for this PR
   pull_request:
-    branches:
-      - ng/template
 
 jobs:
   publish:
