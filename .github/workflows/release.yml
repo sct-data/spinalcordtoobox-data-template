@@ -13,6 +13,11 @@ on:
   # test publishing just for this PR
   pull_request:
 
+ # In the workflow_dispatch case, make a new tag from the given input; in the published release case,
+ # the first variable will be empty, and so this will fall back to using the release's tag.
+env:
+  VERSION_NUMBER: ${{ github.event.inputs.version || github.event.release.tag_name || '2.0.4' }}  # TODO: Remove 2.0.4
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -28,8 +33,7 @@ jobs:
       if: ${{ github.event.repository.name }} == "data-template"
       run: perl -pi -e 's/\${dataset_name}/template/' setup.py
     - name: Replace version string in `setup.py`
-      # TODO: Replace 2.0.3 with ${{ github.event.inputs.version }}
-      run: perl -pi -e 's/version="dev"/version="2.0.3"/' setup.py
+      run: perl -pi -e 's/version="dev"/version="${{ env.VERSION_NUMBER }}"/' setup.py
     - name: Build
       run: |
           python -m build --wheel --sdist
@@ -38,7 +42,7 @@ jobs:
       with:
         files: 'dist/*'
         fail_on_unmatched_files: true
-        tag_name: 2.0.3  #  ${{ github.event.inputs.version }} # in the workflow_dispatch case, make a new tag from the given input; in the published release case, this will be empty and will fall back to updating that release.
+        tag_name: ${{ env.VERSION_NUMBER }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to PyPI
