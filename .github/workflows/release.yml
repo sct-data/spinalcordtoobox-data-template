@@ -4,19 +4,11 @@ on:
   # publish from the Releases page:
   release:
     types: [published]
-  # publish from the Actions page:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version (e.g. 2.0.3)'
-        required: true
   # test publishing just for this PR
   pull_request:
 
- # In the workflow_dispatch case, make a new tag from the given input; in the published release case,
- # the first variable will be empty, and so this will fall back to using the release's tag.
 env:
-  VERSION_NUMBER: ${{ github.event.inputs.version || github.event.release.tag_name || '2.0.4' }}  # TODO: Remove 2.0.4
+  VERSION_NUMBER: ${{ github.event.release.tag_name || '2.0.5' }}  # TODO: Remove 2.0.5
 
 jobs:
   publish:
