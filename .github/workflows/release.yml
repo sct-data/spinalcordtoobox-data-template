@@ -27,6 +27,9 @@ jobs:
     - name: Replace dummy values in `setup.py` (only for `data-template`)
       if: ${{ github.event.repository.name }} == "data-template"
       run: perl -pi -e 's/\${dataset_name}/template/' setup.py
+    - name: Replace version string in `setup.py`
+      # TODO: Replace 2.0.3 with ${{ github.event.inputs.version }}
+      run: perl -pi -e 's/version="dev"/version="2.0.3"/' setup.py
     - name: Build
       run: |
           python -m build --wheel --sdist

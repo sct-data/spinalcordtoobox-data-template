@@ -9,6 +9,7 @@ import site; site.ENABLE_USER_SITE = True
 
 setup(
   name='spinalcordtoolbox-data-${dataset_name}',
+  version="dev",
   description='Part of https://github.com/neuropoly/spinalcordtoolbox',
   long_description=(here / 'README.md').read_text(encoding='utf-8'),
   long_description_content_type='text/markdown',
@@ -28,14 +29,9 @@ setup(
   # with setuptools_scm, means it includes non-python files if they're under git
   include_package_data=True,
 
-  # with setuptools_scm, get the version out of the most recent git tag.
-  # the tags must be formatted as semver.
-  use_scm_version=True,
-
   # pyproject.toml::build-system.requires is supposed to supersede this, but it's still very new so we duplicate it.
   setup_requires=[
     'setuptools',
-    'setuptools_scm[toml]',
     'wheel',
   ],
 
