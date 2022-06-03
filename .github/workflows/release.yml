@@ -25,7 +25,6 @@ jobs:
     - name: Build
       run: |
           python -m build --wheel --sdist
-    ### TODO: can the uploads be parallelized?
     - name: Publish to Github
       uses: softprops/action-gh-release@v1
       with:
