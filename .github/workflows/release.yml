@@ -4,11 +4,11 @@ on:
   # publish from the Releases page:
   release:
     types: [published]
-  # test publishing just for this PR
+  # test building only on PRs
   pull_request:
 
 env:
-  VERSION_NUMBER: ${{ github.event.release.tag_name || '2.0.5' }}  # TODO: Remove 2.0.5
+  VERSION_NUMBER: ${{ github.event.release.tag_name }}
 
 jobs:
   publish:
@@ -30,6 +30,7 @@ jobs:
       run: |
           python -m build --wheel --sdist
     - name: Publish to Github
+      if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       with:
         files: 'dist/*'
@@ -38,6 +39,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to PyPI
+      if: startsWith(github.ref, 'refs/tags/')
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
