@@ -49,7 +49,7 @@ Part of [`spinalcordtoolbox`](https://github.com/spinalcordtoolbox).
 5. Remove the "Using this template" section from `README.md`, since it is now no longer needed.
 
     ```bash
-    # Delete the 'Using the Template' section from `README.md
+    # Delete the 'Using the Template' section from `README.md`
     vi README.md
    
     # Add, commit, and push the changes
