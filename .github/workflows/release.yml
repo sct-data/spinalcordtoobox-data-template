@@ -8,7 +8,7 @@ on:
   pull_request:
 
 env:
-  VERSION_NUMBER: "2022.06.03"  # ${{ github.event.release.tag_name }}
+  VERSION_NUMBER: ${{ github.event.release.tag_name }}
 
 jobs:
   publish:
